@@ -19,7 +19,7 @@ async function getGithubFiles(user="flancast90", name="github-demos") {
 function getAllDirs(reposList) {
     const dirs = [];
     for (const repo of reposList) {
-        if (repo.type === "dir" && repo.name !== "assets") {
+        if (repo.type === "dir" && repo.name !== "assets" && repo.name !== "components") {
             dirs.push(repo);
         }
     }
