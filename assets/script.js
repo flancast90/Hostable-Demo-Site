@@ -1,3 +1,5 @@
+var userInformation = {};
+
 function parseUrl() {
     const url = new URLSearchParams(window.location.search);
     return url.get('dir');
@@ -10,7 +12,7 @@ async function addHeader(elem=document.getElementById("header")) {
     elem.innerHTML = headerCode;
 }
 
-async function getGithubFiles(user="flancast90", name="github-demos") {
+async function getGithubFiles(user=userInformation.gh_name, name=userInformation.gh_repo) {
     const response = await fetch(`https://api.github.com/repos/${user}/${name}/contents`);
     const data = await response.json();
     return data;
@@ -18,9 +20,13 @@ async function getGithubFiles(user="flancast90", name="github-demos") {
 
 function getAllDirs(reposList) {
     const dirs = [];
-    for (const repo of reposList) {
-        if (repo.type === "dir" && repo.name !== "assets" && repo.name !== "components") {
-            dirs.push(repo);
+
+    // list of names to not include
+    const names = ['assets', 'components', 'config'];
+
+    for (const dir of reposList) {
+        if (dir.type === "dir" && !names.includes(dir.name)) {
+            dirs.push(dir);
         }
     }
     return dirs;
@@ -79,6 +85,10 @@ function renderFile(dirName, files, elem=document.getElementById("demos")) {
 
 window.onload = async function() {
     await addHeader();
+
+    var json = await fetch("../config/config.json");
+    userInformation = await json.json();
+
     const repos = await getGithubFiles();
     const dirs = getAllDirs(repos);
     const dirName = parseUrl()
