@@ -8,6 +8,12 @@
 4. Click on ``Settings``>``Pages`` within the GitHub repo GUI, and start a new GitHub Pages of the site from the ``main`` branch.
 5. Navigate to ``<your name>.github.io/<repo name>`` to see your live demo site!
 
+## Screenshots
+#### Main page (root-level directories)
+![Main page](/assets/screenshots/gh-demos-main.png)
+#### Demo pages (directory contents)
+![Demo Page](/assets/screenshots/gh-demos-demo.png)
+
 ## Customization
 Besides the customization of each demo through its associated html file, there is a header component located at ``components/header.component`` which you can edit in order to have custom links and images within the header. This file can be filled with custom html code, which will be rendered as the header on page load. 
 
