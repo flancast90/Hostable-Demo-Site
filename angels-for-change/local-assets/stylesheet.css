@@ -1,0 +1,40 @@
+* {
+    word-wrap: break-word;
+}
+
+h2 {
+    color: #e73936;
+}
+
+h2, h3 {
+    font-family: proxima-nova;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 107px;
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 0em;
+}
+
+h1, h2, h3 {
+    margin: 1em 0 .5em;
+}
+
+h3 {
+    color: rgba(26,26,26,.9);
+    text-transform: uppercase;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    letter-spacing: 0px;
+    line-height: 1.6em;
+    color: rgba(0,0,0,.65);
+}
