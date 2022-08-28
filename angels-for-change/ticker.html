@@ -1,17 +1,17 @@
 <html>
     <head>
-        <script src="local-assets/script.js"></script>
+        <script src="local-assets/script.js" defer></script>
         <link rel="stylesheet" href="local-assets/stylesheet.css">
     </head>
-    <body>
-        <div class="ticker">
-            <h2 id="counter" style="text-align:center;white-space:pre-wrap;">
+    <body style="display:flex; justify-content:center; align-items:center;">
+        <div class="ticker" style="width:300px;">
+            <h2 data-countto="200512" class="counter">
                 0
             </h2>
-            <h3 style="text-align:center;white-space:pre-wrap;">
+            <h3>
                 A very important message goes here.
             </h3>
-            <p style="white-space:pre-wrap;">
+            <p>
                 This is a description giving more clarity about the very important message.
             </p>
         </div>

@@ -1,34 +1,20 @@
-const countto = {
-    num: 200512,
-    elem: document.getElementById('counter'),
+const controls = {
+    speed: 200,
+    elems: document.querySelectorAll('.counter'),
 }
 
-function splitIntoDigits(number) {
-  return number.split()
-}
+controls.elems.forEach((counter) => {
+  const updateCount = () => {
+    const target = parseInt(counter.getAttribute('data-countto'));
+    const count = parseInt(counter.innerText);
+    const increment = Math.trunc(target / controls.speed);
 
-function addZeroes(digit, length) {
-  var zeroes = '';
-  for (var i=0; i<length; i++) {
-    zeroes += '0';
-  }
-  return digit+zeroes;
-}
-
-function animateDigits() {
-  var digits = splitIntoDigits(countto.num);
-  for (var i=0; i<digits.length; i++) {
-    var digit = digits[i];
-    
-    for (var j=1; j<digit; j++) {
-      setInterval(function(currentDigit) {
-        var newDigit = addZeroes(currentDigit, digits.length-2);
-        renderDigits();
-      }, j*100, j);
+    if (count < target) {
+      counter.innerText = count + increment;
+      setTimeout(updateCount, 1);
+    } else {
+      counter.innerText = target;
     }
-  }
-}
-
-function renderDigits(digitArray, elem=countto.elem) {
-  elem.innerHTML = digitArray.map(digit => `${digit}`).join('');
-}
+  };
+  updateCount();
+});
