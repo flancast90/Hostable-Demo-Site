@@ -26,7 +26,7 @@ For super-users who feel experienced with JS, CSS, and HTML, there is also flexi
 ``assets/script.js`` - GitHub API controllers for getting demo files
 ``components/header.component`` - Header HTML code (see above)
 ``config/config.json`` - GitHub API information (username and repo name)
-``index.html`` - demo main page, shows directories uploaded to GitHub Demos root
+``index.html`` - demo main page, shows directories uploaded to project root
 ``show-files.html`` - demo page (directory specific). Finds and shows the contents of a directory with the ``?dir=<directory name>`` query syntax.
 
 ## TODO
