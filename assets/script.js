@@ -12,8 +12,8 @@ async function addHeader(elem=document.getElementById("header")) {
     elem.innerHTML = headerCode;
 }
 
-async function getGithubFiles(user=userInformation.gh_name, name=userInformation.gh_repo) {
-    const response = await fetch(`https://api.github.com/repos/${user}/${name}/contents`);
+async function getGithubFiles(user=userInformation.gh_name, name=userInformation.gh_repo, branch="flancast90") {
+    const response = await fetch(`https://api.github.com/repos/${user}/${name}/contents/?ref=${branch}`);
     const data = await response.json();
     return data;
 }
@@ -56,8 +56,8 @@ function renderDirs(dirs, elem=document.getElementById("demos")) {
     }
 }
 
-async function getFilesFromDir(dir) {
-    const response = await fetch(`https://api.github.com/repos/flancast90/github-demos/contents/${dir}`);
+async function getFilesFromDir(dir, branch="flancast90", user=userInformation.gh_name, name=userInformation.gh_repo) {
+    const response = await fetch(`https://api.github.com/repos/${user}/${name}/contents/${dir}?ref=${branch}`);
     const data = await response.json();
     
     return data;
