@@ -1,0 +1,43 @@
+* {
+    text-align: left
+}
+
+h2 {
+    font-size: 5em !important;
+    font-weight: 800;
+    color: #e73936;
+}
+
+/* reduce vertical space between elements */
+.ticker * {
+    margin: 0;
+}
+
+h2, h3 {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 650;
+    font-style: normal;
+    font-size: 2em;
+    text-transform: none;
+}
+
+/* h1, h2, h3 {
+    margin: 1em 0 .5em;
+}*/
+
+h3 {
+    color: rgba(26,26,26,.9);
+    text-transform: uppercase;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2em;
+    color: rgba(0,0,0,.65);
+}
