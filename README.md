@@ -1,4 +1,4 @@
-# GitHub Demos
+# Hostable-Demo-Site
 > Easily create and host a demo site from a GitHub repository.
 
 ## Getting Started
